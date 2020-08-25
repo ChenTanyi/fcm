@@ -13,6 +13,9 @@ def notify(key: str, title: str, body: str, **kwargs) -> requests.Response:
                 'title': title,
                 'body': body,
             },
+            'data': {
+                'message': body,
+            },
             "condition": "!('test' in topics)",
         },
         timeout = kwargs.get('timeout'))
